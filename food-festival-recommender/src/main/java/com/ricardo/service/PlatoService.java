@@ -31,4 +31,10 @@ public class PlatoService {
         .collect(Collectors.toList());
         return listaMenorCantidadCalorias;
     }
+
+    public Map<Categoria,List<Plato>> agruparPorCategoria(){
+        Map<Categoria,List<Plato>> listaPorCategoria = platos.stream()
+        .collect(Collectors.groupingBy(Plato::getCategoria));
+        return listaPorCategoria;
+    }
 }
