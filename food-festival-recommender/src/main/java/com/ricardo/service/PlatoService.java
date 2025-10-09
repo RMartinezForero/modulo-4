@@ -23,10 +23,10 @@ public class PlatoService {
         return platosFiltrados;
     }
 
-    public List<Plato> menorCantidadCalorias(){
+    public List<Plato> top3MenorCalorias(){
         List<Plato> listaMenorCantidadCalorias = 
         platos.stream()
-        .sorted((a,b) -> Integer.compare(a.getCalorias(), b.getCalorias()))
+        .sorted((p1,p2) -> Integer.compare(p1.getCalorias(), p2.getCalorias()))
         .limit(3)
         .collect(Collectors.toList());
         return listaMenorCantidadCalorias;
