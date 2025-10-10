@@ -57,6 +57,10 @@ public class InterfaceUsuario {
                         System.out.print("categoria: ");
                         String categoria = entrada.nextLine();
                         List<Plato> resultadoFiltro = platoService.platosPorPresupuestoYCategoria(presupuesto, Categoria.valueOf(categoria.toUpperCase()));
+                        if(resultadoFiltro.isEmpty()){
+                            System.out.println("\nNo hay platos que cumplan con el criterio de busqueda.\n");
+                            break;
+                        }
                         System.out.println("\nLos platos que cumplen con el criterio de busqueda son: \n");
                         for(Plato plato: resultadoFiltro){
                             System.out.println(resultadoFiltro);
