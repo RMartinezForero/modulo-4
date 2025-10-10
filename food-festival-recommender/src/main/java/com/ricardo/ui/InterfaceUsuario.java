@@ -63,7 +63,7 @@ public class InterfaceUsuario {
                         }
                         System.out.println("\nLos platos que cumplen con el criterio de busqueda son: \n");
                         for(Plato plato: resultadoFiltro){
-                            System.out.println(resultadoFiltro);
+                            System.out.println(plato);
                         }
                     } catch(Exception e){
                         System.out.println("Por favor escriba un categoria valida entre:");
