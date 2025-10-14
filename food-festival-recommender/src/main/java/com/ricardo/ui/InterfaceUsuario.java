@@ -2,6 +2,7 @@ package com.ricardo.ui;
 
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import com.ricardo.data.DataBaseSimulada;
@@ -33,6 +34,7 @@ public class InterfaceUsuario {
 
             try {
                 respuesta = entrada.nextInt();
+                System.out.println();
                 entrada.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("Opcion invalida. Intente nuevamente.\n");
@@ -78,6 +80,13 @@ public class InterfaceUsuario {
                     }
                     break;
                 case 3:
+                    Map<Categoria,List<Plato>> platosPorCategoria = platoService.agruparPorCategoria();
+
+                    for(Map.Entry<Categoria,List<Plato>> m: platosPorCategoria.entrySet()){
+                        System.out.println(m.getKey() + ":\n");
+                        m.getValue().forEach(System.out::println);
+                        System.out.println();
+                    }
                     break;
                 case 4:
                     salir = true;
